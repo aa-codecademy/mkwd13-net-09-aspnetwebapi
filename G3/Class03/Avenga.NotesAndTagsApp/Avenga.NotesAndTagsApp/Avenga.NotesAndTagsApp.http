@@ -1,0 +1,6 @@
+@Avenga.NotesAndTagsApp_HostAddress = http://localhost:5206
+
+GET {{Avenga.NotesAndTagsApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
