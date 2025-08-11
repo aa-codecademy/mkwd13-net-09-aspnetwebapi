@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avenga.NotesAndTagsApp", "Avenga.NotesAndTagsApp\Avenga.NotesAndTagsApp.csproj", "{D821C3C1-004D-4169-A3F1-CC1563579722}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D821C3C1-004D-4169-A3F1-CC1563579722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D821C3C1-004D-4169-A3F1-CC1563579722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D821C3C1-004D-4169-A3F1-CC1563579722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D821C3C1-004D-4169-A3F1-CC1563579722}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C9853A3-A097-458A-B692-A1CC58B8EB41}
+	EndGlobalSection
+EndGlobal
