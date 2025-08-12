@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "5e27d3e5-08a7-428e-96d1-c6dfb81b752f",
+		"name": "Class03Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23730557"
+	},
+	"item": [
+		{
+			"name": "GetNotes",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetNoteByIndex",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetNoteByQueryString",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "FilterNoteByRouteParameters",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "FilterNoteByQueryParams",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PostNewNote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n  {\r\n    \"text\": \"Tea Break\",\r\n    \"priority\": 2,\r\n    \"tags\": [\r\n      {\r\n        \"name\": \"Green tea\",\r\n        \"color\": \"Green\"\r\n      },\r\n      {\r\n        \"name\": \"Mint tea\",\r\n        \"color\": \"light green\"\r\n      },\r\n      {\r\n        \"name\": \"Hibiskus\",\r\n        \"color\": \"multicolor\"\r\n      }\r\n    ]\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7083/api/Notes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7083",
+					"path": [
+						"api",
+						"Notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateNote",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"name\": \"Very very Healthy\",\r\n      \"color\": \"Ultra green\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7083/api/Notes/updateNote/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7083",
+					"path": [
+						"api",
+						"Notes",
+						"updateNote",
+						"1"
+					],
+					"query": [
+						{
+							"key": "1",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
