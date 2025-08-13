@@ -193,5 +193,30 @@ namespace Avenga.NotesAndTagsApp.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteById(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    return BadRequest();
+                }
+                Note noteDb = StaticDb.Notes.SingleOrDefault(x => x.Id == id);
+                if (noteDb == null)
+                {
+                    return NotFound($"Note with id {id} was not found!");
+                }
+
+                StaticDb.Notes.Remove(noteDb);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+
+        }
     }
 }
