@@ -1,0 +1,6 @@
+@NotesAndTagsApp_HostAddress = http://localhost:5028
+
+GET {{NotesAndTagsApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
