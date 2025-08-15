@@ -350,5 +350,31 @@ namespace NotesApp.Controllers
 				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
 			}
 		}
+
+		[HttpDelete("{id}")]
+		public IActionResult DeleteById(int id)
+		{
+			try
+			{
+				//validation
+				if(id <= 0)
+				{
+					return BadRequest("Id has invalid value");
+				}
+
+				Note noteDb = StaticDb.Notes.FirstOrDefault(x => x.Id == id);
+				if(noteDb == null)
+				{
+					return NotFound($"Note with id {id} was not found");
+				}
+				StaticDb.Notes.Remove(noteDb); //we send the object that we want to delete
+				return StatusCode(StatusCodes.Status204NoContent, "Note deleted");
+
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
 	}
 }
