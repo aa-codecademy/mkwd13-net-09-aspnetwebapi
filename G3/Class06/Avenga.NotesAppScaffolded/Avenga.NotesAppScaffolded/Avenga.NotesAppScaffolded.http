@@ -1,0 +1,6 @@
+@Avenga.NotesAppScaffolded_HostAddress = http://localhost:5052
+
+GET {{Avenga.NotesAppScaffolded_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
