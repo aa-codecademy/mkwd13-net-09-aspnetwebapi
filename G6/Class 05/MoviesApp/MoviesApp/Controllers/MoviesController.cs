@@ -191,5 +191,213 @@ namespace MoviesApp.Controllers
 			}
 		}
 
+		[HttpPost("addMovie")] //here we don't have to add anything to the route, because we don't have another httppost method
+		public IActionResult AddMovie([FromBody] AddMovieDto addMovieDto) //we use a specific dto, beacuse in the fiture some of the data might change for adding/showing the movies
+		{
+			try
+			{
+				//validations
+				if (addMovieDto == null)
+				{
+					return BadRequest("Movie cannot be null");
+				}
+
+				//title is required
+				if (string.IsNullOrEmpty(addMovieDto.Title))
+				{
+					return BadRequest("Title is required");
+				}
+
+				//If description is entered - maximum length is 250 chars
+				//description was entered                             //and description had more than 250 chars
+				if(!string.IsNullOrEmpty(addMovieDto.Description) && addMovieDto.Description.Length > 250)
+				{
+					return BadRequest("Description cannot be longer than 250 characters");
+				}
+
+				//there is no need to check if year has a null value, because a null value cannot be stored into a int (it can only be stored in int?)
+				if(addMovieDto.Year <= 0 || addMovieDto.Year > DateTime.Now.Year)
+				{
+					return BadRequest("Invalid value for year");
+				}
+
+				var enumValues = Enum.GetValues(typeof(GenreEnum)) //returns  array of the values as type Enum
+									 .Cast<GenreEnum>()//we need our specific type of enum - GenreEnum, not the base Enum type, so we need to cast the Enum array into GenreEnum -> Comedy=1, Action=2....
+									 .Select(genre => (int)genre) //1,2,3...
+									 .ToList();
+
+				if (!enumValues.Contains((int)addMovieDto.Genre)) //ex.we sent 15 as genre
+				{
+					return NotFound($"The genre with id {(int)addMovieDto.Genre} was not found");
+				}
+
+				//mapping - we need an instance of Movie class
+				Movie movie = new Movie
+				{
+					Id = StaticDb.Movies.LastOrDefault().Id + 1,
+					Title = addMovieDto.Title,
+					Description = addMovieDto.Description,
+					Genre = addMovieDto.Genre,
+					Year = addMovieDto.Year
+				};
+
+				//add the movie in db
+				StaticDb.Movies.Add(movie);
+				return StatusCode(StatusCodes.Status201Created);
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+
+		[HttpPut]
+		public IActionResult UpdateMovie([FromBody] UpdateMovieDto updateMovieDto)
+		{
+			try
+			{
+				//validaions
+				if(updateMovieDto == null)
+				{
+					return BadRequest("Movie cannot be null");
+				}
+				
+				//if the updateMovieDto.Id is null or is a negative value or is a value that does not exist in StaticDb.Movies - the value of movieDb will be null, so we can only use this check
+				Movie movieDb = StaticDb.Movies.FirstOrDefault(x => x.Id == updateMovieDto.Id);
+				if(movieDb == null)
+				{
+					return NotFound($"Movie with id {updateMovieDto.Id} was not found");
+				}
+
+				//the same rules (requirements) that we had to check when creating a movie, we need to check when we update the movie as well
+				//title is required
+				if (string.IsNullOrEmpty(updateMovieDto.Title))
+				{
+					return BadRequest("Title is required");
+				}
+
+				//If description is entered - maximum length is 250 chars
+				//description was entered                             //and description had more than 250 chars
+				if (!string.IsNullOrEmpty(updateMovieDto.Description) && updateMovieDto.Description.Length > 250)
+				{
+					return BadRequest("Description cannot be longer than 250 characters");
+				}
+
+				//there is no need to check if year has a null value, because a null value cannot be stored into a int (it can only be stored in int?)
+				if (updateMovieDto.Year <= 0 || updateMovieDto.Year > DateTime.Now.Year)
+				{
+					return BadRequest("Invalid value for year");
+				}
+
+				var enumValues = Enum.GetValues(typeof(GenreEnum)) //returns  array of the values as type Enum
+									 .Cast<GenreEnum>()//we need our specific type of enum - GenreEnum, not the base Enum type, so we need to cast the Enum array into GenreEnum -> Comedy=1, Action=2....
+									 .Select(genre => (int)genre) //1,2,3...
+									 .ToList();
+
+				if (!enumValues.Contains((int)updateMovieDto.Genre)) //ex.we sent 15 as genre
+				{
+					return NotFound($"The genre with id {(int)updateMovieDto.Genre} was not found");
+				}
+
+				//mapping - update
+				movieDb.Title = updateMovieDto.Title;
+				movieDb.Description = updateMovieDto.Description;
+				movieDb.Genre = updateMovieDto.Genre;
+				movieDb.Year = updateMovieDto.Year;
+
+				return StatusCode(StatusCodes.Status204NoContent, "Note updated");
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+
+		[HttpDelete]
+		public IActionResult DeleteMovie([FromBody] int id)
+		{
+			try
+			{
+				//validations
+				if(id <= 0)
+				{
+					return BadRequest("Id cannot have a negative value");
+				}
+
+				var movieDb = StaticDb.Movies.FirstOrDefault(x => x.Id == id);
+				if(movieDb == null)
+				{
+					return NotFound("Movie was not found");
+				}
+
+				//delete
+				StaticDb.Movies.Remove(movieDb);
+				return StatusCode(StatusCodes.Status204NoContent, "Movie was deleted");
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+
+		[HttpDelete("{id}")]
+		public IActionResult DeleteMovieByRouteId(int id)
+		{
+			try
+			{
+				//validations
+				if (id <= 0)
+				{
+					return BadRequest("Id cannot have a negative value");
+				}
+
+				var movieDb = StaticDb.Movies.FirstOrDefault(x => x.Id == id);
+				if (movieDb == null)
+				{
+					return NotFound("Movie was not found");
+				}
+
+				//delete
+				StaticDb.Movies.Remove(movieDb);
+				return StatusCode(StatusCodes.Status204NoContent, "Movie was deleted");
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+
+		//queryString
+		[HttpDelete("query")]   //http://localhost:[port]/api/movies/query
+		                        //http://localhost:[port]/api/movies/query?id=1
+		public IActionResult DeleteMovieByQueryStringId(int? id)
+		{
+			try
+			{
+				//validations
+				if(id == null)
+				{
+					return BadRequest("Id cannot be null");
+				}
+				if (id <= 0)
+				{
+					return BadRequest("Id cannot have a negative value");
+				}
+
+				var movieDb = StaticDb.Movies.FirstOrDefault(x => x.Id == id);
+				if (movieDb == null)
+				{
+					return NotFound("Movie was not found");
+				}
+
+				//delete
+				StaticDb.Movies.Remove(movieDb);
+				return StatusCode(StatusCodes.Status204NoContent, "Movie was deleted");
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
 	}
 }
