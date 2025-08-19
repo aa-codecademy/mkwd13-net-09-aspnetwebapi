@@ -1,0 +1,6 @@
+@Avenga.FluentAPI_HostAddress = http://localhost:5222
+
+GET {{Avenga.FluentAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
