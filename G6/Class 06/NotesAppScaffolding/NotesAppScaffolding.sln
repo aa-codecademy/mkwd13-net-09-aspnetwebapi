@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAppScaffolding", "NotesAppScaffolding\NotesAppScaffolding.csproj", "{D3005D1F-CADB-4FBB-A416-B026CC809D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesScaffolding.DataAccess", "NotesScaffolding.DataAccess\NotesScaffolding.DataAccess.csproj", "{CC2F1623-9EB9-49FA-AE92-7FD3256E0C00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3005D1F-CADB-4FBB-A416-B026CC809D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3005D1F-CADB-4FBB-A416-B026CC809D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3005D1F-CADB-4FBB-A416-B026CC809D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3005D1F-CADB-4FBB-A416-B026CC809D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2F1623-9EB9-49FA-AE92-7FD3256E0C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2F1623-9EB9-49FA-AE92-7FD3256E0C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2F1623-9EB9-49FA-AE92-7FD3256E0C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2F1623-9EB9-49FA-AE92-7FD3256E0C00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70AFE15F-52C6-4213-8926-19AF2DA8AF58}
+	EndGlobalSection
+EndGlobal

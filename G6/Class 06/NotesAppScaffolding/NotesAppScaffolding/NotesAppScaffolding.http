@@ -1,0 +1,6 @@
+@NotesAppScaffolding_HostAddress = http://localhost:5159
+
+GET {{NotesAppScaffolding_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
