@@ -16,6 +16,7 @@ namespace Avenga.NotesApp.Domain.Models
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string Username { get; set; }
+        public string Password { get; set; }
         public int Age { get; set; }
         public List<Note> Notes { get; set; }
     }
