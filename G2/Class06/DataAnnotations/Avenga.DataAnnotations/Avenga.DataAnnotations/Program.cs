@@ -1,4 +1,4 @@
-using Avenga.NotesApp.Helpers;
+using Avenga.DataAnnotations.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 

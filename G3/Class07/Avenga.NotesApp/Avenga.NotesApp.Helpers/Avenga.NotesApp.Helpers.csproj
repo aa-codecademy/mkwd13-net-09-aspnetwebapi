@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Avenga.NotesApp.DataAccess\Avenga.NotesApp.DataAccess.csproj" />
+    <ProjectReference Include="..\Avenga.NotesApp.Services\Avenga.NotesApp.Services.csproj" />
   </ItemGroup>
 
 </Project>

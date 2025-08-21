@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Avenga.NotesApp.DataAccess\Avenga.NotesApp.DataAccess.csproj" />
+    <ProjectReference Include="..\Avenga.NotesApp.Domain\Avenga.NotesApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,16 @@
 ﻿using Avenga.NotesApp.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Avenga.NotesApp.DataAccess
 {
     public class NotesAppDbContext : DbContext
     {
-        public NotesAppDbContext(DbContextOptions options) : base(options) {}
+        public NotesAppDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Note> Notes { get; set; }
         public DbSet<User> Users { get; set; }
@@ -14,19 +19,18 @@ namespace Avenga.NotesApp.DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
-            //Note
+            //NOTE
+
             modelBuilder.Entity<Note>()
                 .Property(x => x.Text)
                 .HasMaxLength(100)
                 .IsRequired(); //not null
-
             modelBuilder.Entity<Note>()
                 .Property(x => x.Priority)
-                .IsRequired(); //not null
-
+                .IsRequired();
             modelBuilder.Entity<Note>()
-                .Property(x=>x.Tag)
-                .IsRequired(); //not null
+                .Property(x => x.Tag)
+                .IsRequired();
 
             //relation
             modelBuilder.Entity<Note>()
@@ -40,7 +44,7 @@ namespace Avenga.NotesApp.DataAccess
                 .HasMaxLength(50);
 
             modelBuilder.Entity<User>()
-                .Property(x=>x.LastName)
+                .Property(x => x.LastName)
                 .HasMaxLength(50);
 
             modelBuilder.Entity<User>()
@@ -50,17 +54,13 @@ namespace Avenga.NotesApp.DataAccess
 
             modelBuilder.Entity<User>()
                 .Property(x => x.Password)
-                .HasMaxLength(30)
+                .HasMaxLength(50)
                 .IsRequired();
 
             modelBuilder.Entity<User>()
-                .Ignore(x => x.Age); //not mapped
+                .Ignore(x => x.Age);
 
-            //Seed
-            modelBuilder.Entity<User>()
-                .HasData(new User { Id = 1, FirstName = "Admin", LastName = "Admin", Username = "admin", Password = "admin123", Age = 22 });
         }
-
 
     }
 }

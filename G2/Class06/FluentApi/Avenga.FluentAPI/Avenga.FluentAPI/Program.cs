@@ -1,4 +1,4 @@
-using Avenga.NotesApp.Helpers;
+using Avenga.FluentAPI.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-DependencyInjectionHelper.InjectDbContext(builder.Services);
+DIHelper.InjectDbContext(builder.Services);
 
 var app = builder.Build();
 

@@ -1,23 +1,20 @@
-﻿using System;
+﻿using Avenga.NotesApp.Domain.Enums;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Avenga.NotesApp.Domain.Models
 {
-    public class User
+    public class User : BaseEntity
     {
-        [Key] //PK
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int Age { get; set; }
         public List<Note> Notes { get; set; }
+        //[NotMapped] //will not be sent (mapped) to the db
+        public int Age { get; set; }
     }
 }

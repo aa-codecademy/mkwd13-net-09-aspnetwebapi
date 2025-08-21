@@ -19,8 +19,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Avenga.NotesApp.DataAccess\Avenga.NotesApp.DataAccess.csproj" />
-  </ItemGroup>
-
 </Project>
