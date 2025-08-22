@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Avenga.NotesApp.DataAccess\Avenga.NotesApp.DataAccess.csproj" />
     <ProjectReference Include="..\Avenga.NotesApp.Dto\Avenga.NotesApp.Dto.csproj" />
     <ProjectReference Include="..\Avenga.NotesApp.Mappers\Avenga.NotesApp.Mappers.csproj" />
+    <ProjectReference Include="..\Avenga.NotesApp.Shared\Avenga.NotesApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>
