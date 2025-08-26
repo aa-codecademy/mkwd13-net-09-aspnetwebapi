@@ -34,7 +34,7 @@ namespace Avenga.NotesApp.Services.Implementations
 
             if(addNoteDto.Text.Length > 100)
             {
-                throw new Exception("Text cannot contain more than 100 characters");
+                throw new NoteDataException("Text cannot contain more than 100 characters");
             }
 
             //2. Map to domain model

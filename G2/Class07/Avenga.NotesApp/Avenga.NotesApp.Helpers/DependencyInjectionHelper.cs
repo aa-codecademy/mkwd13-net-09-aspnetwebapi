@@ -1,4 +1,6 @@
 ﻿using Avenga.NotesApp.DataAccess;
+using Avenga.NotesApp.DataAccess.AdoImplementations;
+using Avenga.NotesApp.DataAccess.DapperImplementations;
 using Avenga.NotesApp.DataAccess.Implementations;
 using Avenga.NotesApp.Domain.Models;
 using Avenga.NotesApp.Services.Implementations;
@@ -10,10 +12,10 @@ namespace Avenga.NotesApp.Helpers
 {
     public static class DependencyInjectionHelper
     {
-        public static void InjectDbContext(IServiceCollection services) 
+        public static void InjectDbContext(IServiceCollection services, string connectionString) 
         {
             services.AddDbContext<NotesAppDbContext>(x =>
-            x.UseSqlServer("Server=.;Database=NotesAppDatabase;Trusted_Connection=True;TrustServerCertificate=True"));
+            x.UseSqlServer(connectionString));
         }
 
         public static void InjectRepositories(IServiceCollection services) 
@@ -25,6 +27,16 @@ namespace Avenga.NotesApp.Helpers
         public static void InjectServices(IServiceCollection services)
         {
             services.AddTransient<INoteService, NoteService>();
+        }
+
+        public static void InjectDapperRepositories(IServiceCollection services, string connectionString) 
+        {
+            services.AddTransient<IRepository<Note>>(x => new NoteDapperRepository(connectionString));
+        }
+
+        public static void InjectAdoRepositories(IServiceCollection services, string connectionString)
+        {
+            services.AddTransient<IRepository<Note>>(x => new NoteAdoRepository(connectionString));
         }
     }
 }
