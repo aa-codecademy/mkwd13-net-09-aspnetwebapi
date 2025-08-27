@@ -1,5 +1,6 @@
 ﻿using Avenga.NotesApp.DataAccess;
 using Avenga.NotesApp.DataAccess.Implementations;
+using Avenga.NotesApp.DataAccess.Interfaces;
 using Avenga.NotesApp.Domain.Models;
 using Avenga.NotesApp.Dto;
 using Avenga.NotesApp.Mappers;
@@ -17,9 +18,9 @@ namespace Avenga.NotesApp.Services.Implementations
     public class NoteService : INoteService
     {
         private readonly IRepository<Note> _noteRepository;
-        private readonly IRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public NoteService(IRepository<Note> noteRepository, IRepository<User> userRepository)
+        public NoteService(IRepository<Note> noteRepository, IUserRepository userRepository)
         {
             _noteRepository = noteRepository;
             _userRepository = userRepository;

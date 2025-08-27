@@ -1,11 +1,12 @@
 ﻿using Avenga.NotesApp.Dto;
 using Avenga.NotesApp.Services.Interfaces;
 using Avenga.NotesApp.Shared;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Avenga.NotesApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase

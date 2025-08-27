@@ -1,4 +1,5 @@
-﻿using Avenga.NotesApp.Domain.Models;
+﻿using Avenga.NotesApp.DataAccess.Interfaces;
+using Avenga.NotesApp.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Avenga.NotesApp.DataAccess.Implementations
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUserRepository
     {
         public NotesAppDbContext _noteAppDbContext;
         public UserRepository(NotesAppDbContext noteAppDbContext)
@@ -36,9 +37,20 @@ namespace Avenga.NotesApp.DataAccess.Implementations
             return _noteAppDbContext.Users.SingleOrDefault(x => x.Id == id);
         }
 
+        public User GetUserByUsername(string username)
+        {
+            return _noteAppDbContext.Users.SingleOrDefault(x=> x.Username.ToLower() == username.ToLower());
+        }
+
+        public User LoginUser(string username, string hashedPassword)
+        {
+            return _noteAppDbContext.Users.SingleOrDefault(x => x.Username.ToLower() == username.ToLower() && x.Password == hashedPassword);
+        }
+
         public void Update(User entity)
         {
-            throw new NotImplementedException();
+            _noteAppDbContext.Users.Update(entity);
+            _noteAppDbContext.SaveChanges();
         }
     }
 }
