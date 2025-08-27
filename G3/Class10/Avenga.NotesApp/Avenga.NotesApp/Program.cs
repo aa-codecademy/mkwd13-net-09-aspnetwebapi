@@ -9,8 +9,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-DependencyInjectionHelper.InjectDbContext(builder.Services);
+var appSettings = builder.Configuration.GetSection("AppSettings");
+builder.Services.Configure<AppSettings>(appSettings);
+
+AppSettings appSettingsObject = appSettings.Get<AppSettings>();
+
+DependencyInjectionHelper.InjectDbContext(builder.Services, appSettingsObject.ConnectionString);
 DependencyInjectionHelper.InjectRepositories(builder.Services);
+DependencyInjectionHelper.InjectAdoRepositories(builder.Services, appSettingsObject.ConnectionString);
+DependencyInjectionHelper.InjectDapperRepositories(builder.Services, appSettingsObject.ConnectionString);
 DependencyInjectionHelper.InjectServices(builder.Services);
 
 var app = builder.Build();
