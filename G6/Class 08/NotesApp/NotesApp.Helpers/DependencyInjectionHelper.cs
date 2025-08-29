@@ -9,7 +9,7 @@ namespace NotesApp.Helpers
 	{
 		public static void InjectDbContext(IServiceCollection services)
 		{
-			services.AddDbContext<NotesAppDbContext>(x => x.UseSqlServer("Server=.;Database=AANotesApp;Trusted_Connection=True;Encrypt=False"));
+			services.AddDbContext<NotesAppDbContext>(x => x.UseSqlServer("Server=.\\SQLExpress;Database=AANotesApp;Trusted_Connection=True;TrustServerCertificate=True"));
 		}
 	}
 }
