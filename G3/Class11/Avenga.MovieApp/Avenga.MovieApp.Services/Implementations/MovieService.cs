@@ -20,7 +20,7 @@ namespace Avenga.MovieApp.Services.Implementations
         {
             _movieRepository = movieRepository; //DI
         }
-        public void AddMovie(AddMovieDto addMovieDto)
+        public void AddMovie(AddMovieDto addMovieDto, int userId)
         {
             if (string.IsNullOrEmpty(addMovieDto.Title))
             {
@@ -36,6 +36,7 @@ namespace Avenga.MovieApp.Services.Implementations
             }
 
             Movie newMovie = addMovieDto.ToMovie();
+            newMovie.UserId = userId;
 
             _movieRepository.Add(newMovie);
         }
@@ -69,9 +70,9 @@ namespace Avenga.MovieApp.Services.Implementations
             return _movieRepository.FilterMovies(year, genre).Select(x=>x.ToMovieDto()).ToList();
         }
 
-        public List<MovieDto> GetAllMovies()
+        public List<MovieDto> GetAllMovies(int userId)
         {
-            return _movieRepository.GetAll().Select(x=> x.ToMovieDto()).ToList();
+            return _movieRepository.GetAll().Where(x => x.UserId == userId).Select(x=> x.ToMovieDto()).ToList();
         }
 
         public MovieDto GetMovieById(int id)

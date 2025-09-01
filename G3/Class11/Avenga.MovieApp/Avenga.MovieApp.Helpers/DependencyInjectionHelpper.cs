@@ -17,11 +17,13 @@ namespace Avenga.MovieApp.Helpers
         public static void InjectRepositories(IServiceCollection services) 
         {
             services.AddTransient<IMovieRepository, MovieRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         public static void InjectServices(IServiceCollection services) 
         {
             services.AddTransient<IMovieService, MovieService>();
+            services.AddTransient<IUserService, UserService>();
         }
     }
 }

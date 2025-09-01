@@ -5,6 +5,7 @@ using Avenga.MovieApp.Services.Interfaces;
 using Avenga.MovieApp.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Avenga.MovieApp.Controllers
 {
@@ -24,7 +25,8 @@ namespace Avenga.MovieApp.Controllers
         {
             try
             {
-                return Ok(_movieService.GetAllMovies());
+                int userId = GetAuthorizedUserId();
+                return Ok(_movieService.GetAllMovies(userId));
             }
             catch (Exception ex)
             {
@@ -58,7 +60,8 @@ namespace Avenga.MovieApp.Controllers
         {
             try
             {
-                _movieService.AddMovie(addMovieDto);
+                int userId = GetAuthorizedUserId();
+                _movieService.AddMovie(addMovieDto, userId);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (MovieException e)
@@ -130,6 +133,16 @@ namespace Avenga.MovieApp.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+
+
+        private int GetAuthorizedUserId()
+        {
+            if (!int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
+            {
+                throw new UserException(userId, User.FindFirst(ClaimTypes.Name)?.Value, "Name indentifire claims not exist!");
+            }
+            return userId;
         }
     }
 }
