@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36202.13 d17.14
+VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avenga.NotesApp", "Avenga.NotesApp\Avenga.NotesApp.csproj", "{E6781C39-A866-46F2-A6C5-C7FCC75F3DEA}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avenga.NotesApp.Helpers", "Avenga.NotesApp.Helpers\Avenga.NotesApp.Helpers.csproj", "{6CB9367C-FF64-4C02-AAD7-A2ECFAECDC9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avenga.NotesApp.Mappers", "Avenga.NotesApp.Mappers\Avenga.NotesApp.Mappers.csproj", "{9ABF09A5-FF37-4912-B17F-B86F33E559DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAppTests", "NotesAppTests\NotesAppTests.csproj", "{A7A150BD-BA6A-4DFC-9DF6-B9D5EF32641E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{9ABF09A5-FF37-4912-B17F-B86F33E559DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ABF09A5-FF37-4912-B17F-B86F33E559DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ABF09A5-FF37-4912-B17F-B86F33E559DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A150BD-BA6A-4DFC-9DF6-B9D5EF32641E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A150BD-BA6A-4DFC-9DF6-B9D5EF32641E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A150BD-BA6A-4DFC-9DF6-B9D5EF32641E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A150BD-BA6A-4DFC-9DF6-B9D5EF32641E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
