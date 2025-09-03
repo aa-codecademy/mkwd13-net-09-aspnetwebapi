@@ -5,11 +5,6 @@ using Avenga.MovieApp.Dtos;
 using Avenga.MovieApp.Mappers;
 using Avenga.MovieApp.Services.Interfaces;
 using Avenga.MovieApp.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Avenga.MovieApp.Services.Implementations
 {

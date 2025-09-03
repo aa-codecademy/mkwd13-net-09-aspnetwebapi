@@ -124,7 +124,7 @@ namespace Avenga.MovieApp.Services.Implementations
             }
             if (registerUser.Password != registerUser.ConfirmPassword)
             {
-                throw new UserException(null, registerUser.Username, "PAsswords did not match!");
+                throw new UserException(null, registerUser.Username, "Passwords did not match!");
             }
         }
 

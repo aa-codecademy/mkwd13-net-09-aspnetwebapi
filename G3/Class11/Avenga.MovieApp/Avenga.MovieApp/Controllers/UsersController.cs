@@ -40,5 +40,25 @@ namespace Avenga.MovieApp.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public IActionResult RegisterUser([FromBody] RegisterUserDto registerUserDto) 
+        {
+            try
+            {
+                _userService.RegisterUser(registerUserDto);
+
+                return Ok(new ResponseDto() { Success = "Successfully registered user!"});
+            }
+            catch (UserException e)
+            {
+                return BadRequest(new ResponseDto() { Error = e.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
     }
 }
