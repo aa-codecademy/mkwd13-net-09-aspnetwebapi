@@ -7,9 +7,9 @@ namespace Unit_Testing_Tests
     {
         private readonly RandomService _randomService;
 
-        public RandomServiceTest(RandomService randomService)
+        public RandomServiceTest()
         {
-            _randomService = randomService;
+            _randomService = new RandomService();
         }
 
         [TestMethod]
