@@ -1,53 +1,49 @@
-﻿using Avenga.MovieApp.DataAccess;
-using Avenga.MovieApp.Domain.Enums;
-using Avenga.MovieApp.Domain.Models;
-using Avenga.MovieApp.Dtos;
-using Avenga.MovieApp.Mappers;
-using Avenga.MovieApp.Services.Interfaces;
-using Avenga.MovieApp.Shared;
+﻿using SEDC.MoviesApp.DataAccess;
+using SEDC.MoviesApp.Domain;
+using SEDC.MoviesApp.Dtos;
+using SEDC.MoviesApp.Mappers;
+using SEDC.MoviesApp.Services.Interfaces;
+using SEDC.MoviesApp.Shared;
 
-namespace Avenga.MovieApp.Services.Implementations
+namespace SEDC.MoviesApp.Services.Implementations
 {
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
+
         public MovieService(IMovieRepository movieRepository)
         {
-            _movieRepository = movieRepository; //DI
+            _movieRepository = movieRepository;
         }
         public void AddMovie(AddMovieDto addMovieDto, int userId)
         {
             if (string.IsNullOrEmpty(addMovieDto.Title))
             {
-                throw new MovieException("Title must not be empty");
-            }
-            if (addMovieDto.Description.Length > 250)
-            {
-                throw new MovieException("Description can not be longer than 250 characters");
+                throw new MovieException("Text must not be empty");
             }
             if (addMovieDto.Year <= 0)
             {
-                throw new MovieException("Year can not have negative value");
+                throw new MovieException("Year must not be negative");
+            }
+            if (!string.IsNullOrEmpty(addMovieDto.Description) && addMovieDto.Description.Length > 250)
+            {
+                throw new MovieException("Description can not be longer than 250 characters");
             }
 
             Movie newMovie = addMovieDto.ToMovie();
             newMovie.UserId = userId;
-
             _movieRepository.Add(newMovie);
+
         }
 
         public void DeleteMovie(int id)
         {
-            if (id < 0)
-            {
-                throw new MovieException("The id can not be negative!");
-            }
-
             var movieDb = _movieRepository.GetById(id);
             if (movieDb == null)
             {
-                throw new MovieNotFoundException("Movie was not found!");
+                throw new MovieNotFoundException($"Movie with id {id} not found");
             }
+
             _movieRepository.Delete(movieDb);
         }
 
@@ -55,41 +51,42 @@ namespace Avenga.MovieApp.Services.Implementations
         {
             if (genre.HasValue)
             {
-                var enumValues = Enum.GetValues(typeof(GenreEnum)).Cast<GenreEnum>().ToList();
-                if (!enumValues.Contains(genre.Value)) 
+                //validate if the value for genre is valid
+                var enumValues = Enum.GetValues(typeof(GenreEnum))
+                                        .Cast<GenreEnum>()
+                                        .ToList();
+
+                if (!enumValues.Contains(genre.Value))
                 {
                     throw new MovieException("Invalid genre value");
                 }
             }
-
-            return _movieRepository.FilterMovies(year, genre).Select(x=>x.ToMovieDto()).ToList();
+            return _movieRepository.FilterMovies(year, genre)
+                .Select(x => x.ToMovieDto()).ToList();
         }
 
         public List<MovieDto> GetAllMovies(int userId)
         {
-            return _movieRepository.GetAll().Where(x => x.UserId == userId).Select(x=> x.ToMovieDto()).ToList();
+            return _movieRepository.GetAll().Where(x => x.UserId == userId).Select(x => x.ToMovieDto()).ToList();
         }
 
         public MovieDto GetMovieById(int id)
         {
-            if (id <= 0)
-            {
-                throw new MovieException("The id can not be negative!");
-            }
             var movieDb = _movieRepository.GetById(id);
-            if (movieDb == null)
+            if(movieDb == null)
             {
-                throw new MovieNotFoundException("Movie was not found");
+                throw new MovieNotFoundException($"Movie with id {id} not found");
             }
             return movieDb.ToMovieDto();
         }
 
         public void UpdateMovie(UpdateMovieDto updateMovieDto)
         {
-            Movie movieDb = _movieRepository.GetById(updateMovieDto.Id);
+            var movieDb = _movieRepository.GetById(updateMovieDto.Id);
             if (movieDb == null)
-                throw new MovieNotFoundException("Resource not found");
-
+            {
+                throw new MovieNotFoundException($"Movie with id {updateMovieDto.Id} not found");
+            }
             if (string.IsNullOrEmpty(updateMovieDto.Title))
             {
                 throw new MovieException("Text must not be empty");
@@ -98,7 +95,7 @@ namespace Avenga.MovieApp.Services.Implementations
             {
                 throw new MovieException("Year must not be negative");
             }
-            if (updateMovieDto.Description.Length > 250)
+            if (!string.IsNullOrEmpty(updateMovieDto.Description) && updateMovieDto.Description.Length > 250)
             {
                 throw new MovieException("Description can not be longer than 250 characters");
             }
