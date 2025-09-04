@@ -34,7 +34,7 @@ namespace Avenga.NotesApp.DataAccess
             modelBuilder.Entity<Note>()
                 .HasOne(x => x.User)
                 .WithMany(x => x.Notes)
-                .HasForeignKey(x => x.User.Id);
+                .HasForeignKey(x => x.UserId);
 
             #endregion
 

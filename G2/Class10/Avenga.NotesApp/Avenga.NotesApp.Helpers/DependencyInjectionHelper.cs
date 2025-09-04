@@ -28,6 +28,7 @@ namespace Avenga.NotesApp.Helpers
         public static void InjectServices(IServiceCollection services)
         {
             services.AddTransient<INoteService, NoteService>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         public static void InjectDapperRepositories(IServiceCollection services, string connectionString) 
