@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp", "NotesApp\NotesApp.csproj", "{9A809613-E152-497E-924C-B669B31C0695}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.DataAccess", "NotesApp.DataAccess\NotesApp.DataAccess.csproj", "{07FFD483-7ECA-4BFE-8D14-153EDCEDFFC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.Domain", "NotesApp.Domain\NotesApp.Domain.csproj", "{FB072603-2022-43B0-9B7D-5833D30FA7FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.Helpers", "NotesApp.Helpers\NotesApp.Helpers.csproj", "{9E44E8DF-5DD4-40FA-86DE-05790498F70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Services", "NotesApp.Services\NotesApp.Services.csproj", "{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.DTOs", "NotesApp.DTOs\NotesApp.DTOs.csproj", "{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Mappers", "NotesApp.Mappers\NotesApp.Mappers.csproj", "{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A809613-E152-497E-924C-B669B31C0695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A809613-E152-497E-924C-B669B31C0695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A809613-E152-497E-924C-B669B31C0695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A809613-E152-497E-924C-B669B31C0695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07FFD483-7ECA-4BFE-8D14-153EDCEDFFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07FFD483-7ECA-4BFE-8D14-153EDCEDFFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07FFD483-7ECA-4BFE-8D14-153EDCEDFFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07FFD483-7ECA-4BFE-8D14-153EDCEDFFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB072603-2022-43B0-9B7D-5833D30FA7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB072603-2022-43B0-9B7D-5833D30FA7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB072603-2022-43B0-9B7D-5833D30FA7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB072603-2022-43B0-9B7D-5833D30FA7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E44E8DF-5DD4-40FA-86DE-05790498F70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E44E8DF-5DD4-40FA-86DE-05790498F70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E44E8DF-5DD4-40FA-86DE-05790498F70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E44E8DF-5DD4-40FA-86DE-05790498F70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6DB963D-3390-4F0A-8C84-C3196EBFB941}
+	EndGlobalSection
+EndGlobal
