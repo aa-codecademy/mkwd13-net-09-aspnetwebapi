@@ -7,6 +7,7 @@ namespace NotesApp.Services.Interfaces
         List<NoteDto> GetAllNotes(FilterDto filter, int userId);
         NoteDto GetById(int id, int userId);
         void AddNote(AddNoteDto note, int userId);
+        void UpdateNote(UpdateNoteDto note);
         void DeleteById(int id);
     }
 }

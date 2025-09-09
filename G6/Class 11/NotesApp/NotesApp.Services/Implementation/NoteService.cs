@@ -155,5 +155,47 @@ namespace NotesApp.Services.Implementation
             var note = _noteRepository.GetById(id);
             _noteRepository.Delete(note);
         }
+
+        public void UpdateNote(UpdateNoteDto updateNoteDto)
+        {
+            //validation
+            if(updateNoteDto == null)
+            {
+				throw new ArgumentNullException("Model should populated!");
+			}
+
+            Note noteDb = _noteRepository.GetById(updateNoteDto.Id);
+            if(noteDb == null)
+            {
+                throw new Exception($"Note with id {updateNoteDto.Id} was not found");
+            }
+
+			var isValidUser = noteDb.UserId == updateNoteDto.UserId;
+			if (!isValidUser)
+			{
+
+				throw new Exception($"This note is not a note of the user with id {updateNoteDto.UserId}");
+			}
+
+			if (string.IsNullOrEmpty(updateNoteDto.Text)) throw new ArgumentNullException("Text is required");
+
+			if (updateNoteDto.Text.Length > 100) throw new ArgumentException("Text lenght should be max 100 chars");
+
+            User userDb = _userRepository.GetById(updateNoteDto.UserId);
+            if(userDb == null)
+            {
+                throw new DataException($"User with id {updateNoteDto.UserId} was not found");
+            }
+
+            //update
+            noteDb.Text = updateNoteDto.Text;
+            noteDb.Priority = updateNoteDto.Priority;
+            noteDb.Tag = updateNoteDto.Tag;
+            noteDb.User = userDb;
+            noteDb.UserId = updateNoteDto.UserId;
+
+            //save to db (call db)
+            _noteRepository.Update(noteDb);
+		}
     }
 }

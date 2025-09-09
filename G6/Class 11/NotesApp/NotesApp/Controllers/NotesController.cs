@@ -136,5 +136,42 @@ namespace NotesApp.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-    }
+
+		[HttpPut]
+		[Authorize]
+		public IActionResult UpdateNote([FromBody] UpdateNoteDto note)
+		{
+			try
+			{
+				var identity = HttpContext.User.Identity as ClaimsIdentity;
+
+				if (identity == null)
+				{
+					throw new ArgumentNullException("Identity is null");
+				}
+
+				if (!int.TryParse(identity.FindFirst("id")?.Value, out int userId))
+				{
+					throw new Exception("Claim id does not exists");
+				}
+
+                note.UserId = userId;
+
+				_noteService.UpdateNote(note);
+				return NoContent(); //204
+			}
+			catch (ArgumentNullException ex)
+			{
+				return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+			}
+			catch (ArgumentException ex)
+			{
+				return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+	}
 }
