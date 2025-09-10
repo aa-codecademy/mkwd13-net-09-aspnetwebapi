@@ -14,11 +14,11 @@ namespace Avenga.NotesApp.Mappers
         {
             return new NoteDto
             {
+                Id = note.Id,
                 Tag = note.Tag,
                 Priority = note.Priority,
                 Text = note.Text,
-                UserFullName = $"{note.User.FirstName} {note.User.LastName}",
-              
+                UserFullName = $"{note.User.FirstName} {note.User.LastName}"
             };
         }
 
@@ -28,8 +28,7 @@ namespace Avenga.NotesApp.Mappers
             {
                 Tag = addNote.Tag,
                 Priority = addNote.Priority,
-                Text = addNote.Text,
-                UserId = addNote.UserId //FK
+                Text = addNote.Text
             };
         }
     }

@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Avenga.NotesApp.Services\Avenga.NotesApp.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
 </Project>

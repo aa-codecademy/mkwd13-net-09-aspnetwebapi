@@ -31,7 +31,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 //Adding serilog to app
-builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.File("logs.txt"));
+builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.File("logs/logs.txt", rollingInterval: RollingInterval.Day));
+//logs20250910
+//builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.File("logs/logs.txt", rollingInterval: RollingInterval.Minute));
+//logs202509101817
+
 
 var appSettings = builder.Configuration.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appSettings);
@@ -48,6 +52,28 @@ DependencyInjectionHelper.InjectServices(builder.Services);
 //documentation about the external API https://www.fruityvice.com/doc/index.html#api-GET-GETsByOrder
 //External api location https://www.fruityvice.com/#3
 builder.Services.AddHttpClient<FruitService>();
+
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("AllowFrontendLocalhostOrLiveServer",
+    policy =>
+    policy.WithOrigins("http://127.0.0.1:5501/")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+
+    options.AddPolicy("AllowFrontendNotesApp",
+        policy => 
+        policy.WithOrigins("https://noteapp.com")
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+
+    options.AddPolicy("AllowAll",
+        policy => 
+        policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                );
+});
 
 //Configure JWT
 builder.Services.AddAuthentication(x =>
@@ -79,6 +105,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowAll");
 app.UseAuthentication(); // to be able to use JWT auth
 app.UseAuthorization();
 

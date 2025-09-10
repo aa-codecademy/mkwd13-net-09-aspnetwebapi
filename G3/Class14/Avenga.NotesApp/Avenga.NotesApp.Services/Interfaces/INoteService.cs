@@ -9,10 +9,10 @@ namespace Avenga.NotesApp.Services.Interfaces
 {
     public interface INoteService
     {
-        List<NoteDto> GetAllNotes();
+        List<NoteDto> GetAllNotes(int userId);
         NoteDto GetByIdNote(int id);
-        void AddNote(AddNoteDto addNoteDto);
-        void UpdateNote(UpdateNoteDto updateNoteDto);
+        void AddNote(AddNoteDto addNoteDto, int userId);
+        void UpdateNote(UpdateNoteDto updateNoteDto, int userId);
         void DeleteNote(int id);
     }
 }

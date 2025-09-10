@@ -68,7 +68,8 @@ namespace Avenga.NotesApp.Services.Implementations
                     {
                         //new Claim(ClaimTypes.Role, userDb.Role)
                         new Claim(ClaimTypes.Name, userDb.Username),
-                        new Claim("userFullName", $"{userDb.FirstName} {userDb.LastName}") 
+                        new Claim("userFullName", $"{userDb.FirstName} {userDb.LastName}") ,
+                        new Claim(ClaimTypes.NameIdentifier, userDb.Id.ToString())
                     })
             };
 

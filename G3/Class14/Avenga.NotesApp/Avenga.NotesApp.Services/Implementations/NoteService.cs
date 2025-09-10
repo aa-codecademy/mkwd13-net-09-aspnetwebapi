@@ -25,13 +25,13 @@ namespace Avenga.NotesApp.Services.Implementations
             _noteRepository = noteRepository;
             _userRepository = userRepository;
         }
-        public void AddNote(AddNoteDto addNoteDto)
+        public void AddNote(AddNoteDto addNoteDto, int userId)
         {
             //1. validation
-            User userDb = _userRepository.GetById(addNoteDto.UserId);
+            User userDb = _userRepository.GetById(userId);
             if (userDb == null) 
             {
-                throw new NoteDataException($"User with id {addNoteDto.UserId} does not exist!!!");
+                throw new NoteDataException($"User with id {userId} does not exist!!!");
             }
             if (string.IsNullOrEmpty(addNoteDto.Text))
             {
@@ -45,6 +45,7 @@ namespace Avenga.NotesApp.Services.Implementations
             //2. map to domain model
             Note newNote = addNoteDto.ToNote();
             newNote.User = userDb;
+            newNote.UserId = userId;
 
             //3. add to db
             _noteRepository.Add(newNote);
@@ -61,10 +62,10 @@ namespace Avenga.NotesApp.Services.Implementations
             _noteRepository.Delete(noteDb);
         }
 
-        public List<NoteDto> GetAllNotes()
+        public List<NoteDto> GetAllNotes(int userId)
         {
             List<Note> noteDb = _noteRepository.GetAll();
-            return noteDb.Select(x=>x.ToNoteDto()).ToList();
+            return noteDb.Where(x=> x.UserId == userId).Select(x=>x.ToNoteDto()).ToList();
         }
 
         public NoteDto GetByIdNote(int id)
@@ -78,7 +79,7 @@ namespace Avenga.NotesApp.Services.Implementations
             return noteDto;
         }
 
-        public void UpdateNote(UpdateNoteDto updateNoteDto)
+        public void UpdateNote(UpdateNoteDto updateNoteDto, int userId)
         {
             //1. validation
             Note noteDb = _noteRepository.GetById(updateNoteDto.Id);
@@ -87,10 +88,10 @@ namespace Avenga.NotesApp.Services.Implementations
                 throw new NoteNotFoundException($"Note with id {updateNoteDto.Id} was not found!");
             }
 
-            User userDb = _userRepository.GetById(updateNoteDto.UserId);
+            User userDb = _userRepository.GetById(userId);
             if (userDb == null) 
             {
-                throw new NoteDataException($"User with id {updateNoteDto.UserId} does not exist!");
+                throw new NoteDataException($"User with id {userId} does not exist!");
             }
 
             if (string.IsNullOrEmpty(updateNoteDto.Text)) 
@@ -107,7 +108,7 @@ namespace Avenga.NotesApp.Services.Implementations
             noteDb.Text = updateNoteDto.Text;
             noteDb.Priority = updateNoteDto.Priority;
             noteDb.Tag = updateNoteDto.Tag;
-            noteDb.UserId = updateNoteDto.UserId;
+            noteDb.UserId = userId;
             noteDb.User = userDb;
 
             _noteRepository.Update(noteDb);

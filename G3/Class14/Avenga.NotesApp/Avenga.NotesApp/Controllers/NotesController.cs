@@ -4,6 +4,7 @@ using Avenga.NotesApp.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using System.Security.Claims;
 
 namespace Avenga.NotesApp.Controllers
 {
@@ -23,7 +24,8 @@ namespace Avenga.NotesApp.Controllers
         {
             try
             {
-                return Ok(_noteService.GetAllNotes());
+                int userId = GetAuthrizedUserId();
+                return Ok(_noteService.GetAllNotes(userId));
             }
             catch (Exception ex)
             {
@@ -37,7 +39,7 @@ namespace Avenga.NotesApp.Controllers
             try
             {
                 NoteDto noteDto = _noteService.GetByIdNote(id);
-                Log.Information($"Retrieved note: {noteDto.Text}");
+                Log.Information($"Retrieved note: {noteDto.Text}", DateTime.UtcNow);
                 return Ok(noteDto); //satus code => 200
             }
             catch(NoteNotFoundException e)
@@ -57,7 +59,8 @@ namespace Avenga.NotesApp.Controllers
         {
             try
             {
-                _noteService.AddNote(addNoteDto);
+                int userId = GetAuthrizedUserId();
+                _noteService.AddNote(addNoteDto, userId);
                 Log.Information($"New note was added!");
                 return StatusCode(StatusCodes.Status201Created, "Note added!"); //staus code => 201
             }
@@ -76,7 +79,8 @@ namespace Avenga.NotesApp.Controllers
         {
             try
             {
-                _noteService.UpdateNote(updateNoteDto);
+                int userId = GetAuthrizedUserId();
+                _noteService.UpdateNote(updateNoteDto, userId);
                 return NoContent(); // staus code => 204
             }
             catch (NoteNotFoundException e)
@@ -109,6 +113,15 @@ namespace Avenga.NotesApp.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message); //staus code => 500
             }
+        }
+
+        private int GetAuthrizedUserId()
+        {
+            if(!int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
+            {
+                throw new UserDataException("NameIdentifier calims not exist!");
+            }
+            return userId;
         }
     }
 }

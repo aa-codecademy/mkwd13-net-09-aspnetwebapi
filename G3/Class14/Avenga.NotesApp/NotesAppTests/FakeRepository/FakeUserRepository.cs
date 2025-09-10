@@ -58,7 +58,11 @@ namespace NotesAppTests.FakeRepository
 
         public void Update(User entity)
         {
-            _users[_users.IndexOf(entity)]
+            int index = _users.FindIndex(x=> x.Id == entity.Id);
+            if(index != -1)
+            {
+                _users[index] = entity;
+            }
         }
     }
 }
