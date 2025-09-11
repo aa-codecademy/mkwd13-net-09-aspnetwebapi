@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <!-- Login/Register Choice -->
+    <div id="authChoice" class="text-center">
+        <h1 class="mb-4">Welcome to NoteApp</h1>
+        <button class="btn btn-primary me-2" onclick="showLogin()">Login</button>
+        <button class="btn btn-success" onclick="showRegister()">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="card p-4 mx-auto" style="max-width:400px; display:none;">
+        <h3 class="mb-3">Login</h3>
+        <div class="mb-3">
+            <input type="text" id="loginUsername" class="form-control" placeholder="Username">
+        </div>
+        <div class="mb-3">
+            <input type="password" id="loginPassword" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-primary w-100" id="loginBtn">Login</button>
+        <p class="mt-3 text-center">Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" class="card p-4 mx-auto" style="max-width:400px; display:none;">
+        <h3 class="mb-3">Register</h3>
+        <input type="text" id="regFirstName" class="form-control mb-2" placeholder="First Name">
+        <input type="text" id="regLastName" class="form-control mb-2" placeholder="Last Name">
+        <input type="text" id="regUsername" class="form-control mb-2" placeholder="Username">
+        <input type="password" id="regPassword" class="form-control mb-2" placeholder="Password">
+        <input type="password" id="regConfirmPassword" class="form-control mb-3" placeholder="Confirm Password">
+        <button class="btn btn-success w-100" id="registerBtn">Register</button>
+        <p class="mt-3 text-center">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <!-- Notes Page -->
+    <div id="notesContainer" style="display:none;">
+        <h2 class="mb-3">Your Notes</h2>
+
+        <!-- New Note -->
+        <div class="mb-3 d-flex gap-2">
+            <input type="text" id="newNoteText" class="form-control" placeholder="New note" required>
+            <select id="newNotePriority" class="form-select">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <select id="newNoteTag" class="form-select">
+                <option value="Work">Work</option>
+                <option value="Health">Health</option>
+                <option value="SocialLife">SocialLife</option>
+            </select>
+            <button id="addNoteBtn" class="btn btn-primary">Add Note</button>
+        </div>
+
+        <!-- Notes Cards -->
+        <div id="notesCards" class="row row-cols-1 row-cols-md-2 g-3"></div>
+
+        <!-- Update Note Modal -->
+        <div class="modal fade" id="updateNoteModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h5>Update Note</h5>
+                <form id="updateNoteForm">
+                    <input type="hidden" id="updateNoteId">
+                    <div class="mb-2">
+                        <input type="text" id="updateNoteText" class="form-control" placeholder="Note Text">
+                    </div>
+                    <div class="mb-2">
+                        <select id="updateNotePriority" class="form-select">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <select id="updateNoteTag" class="form-select">
+                            <option value="Work">Work</option>
+                            <option value="Health">Health</option>
+                            <option value="SocialLife">SocialLife</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100">Update</button>
+                </form>
+            </div>
+          </div>
+        </div>
+
+        <button id="logoutBtn" class="btn btn-danger mt-3">Logout</button>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/notes.js"></script>
+</body>
+</html>
