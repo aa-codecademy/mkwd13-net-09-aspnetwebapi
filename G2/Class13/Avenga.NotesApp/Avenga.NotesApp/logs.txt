@@ -1,0 +1,207 @@
+2025-09-11 18:28:28.809 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-11 18:28:29.315 +02:00 [INF] Now listening on: http://localhost:5280
+2025-09-11 18:28:29.431 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-11 18:28:29.431 +02:00 [INF] Hosting environment: Development
+2025-09-11 18:28:29.431 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\StudentRepoApi\mkwd13-net-09-aspnetwebapi\G2\Class13\Avenga.NotesApp\Avenga.NotesApp
+2025-09-11 18:28:30.563 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/index.html - null null
+2025-09-11 18:28:30.886 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/index.html - 200 null text/html;charset=utf-8 333.1256ms
+2025-09-11 18:28:31.099 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_vs/browserLink - null null
+2025-09-11 18:28:31.099 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-11 18:28:31.102 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.3139ms
+2025-09-11 18:28:31.244 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_vs/browserLink - 200 null text/javascript; charset=UTF-8 145.3224ms
+2025-09-11 18:28:31.300 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - null null
+2025-09-11 18:28:31.318 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.2503ms
+2025-09-11 18:28:56.362 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5280/api/Users/login - application/json 61
+2025-09-11 18:28:56.376 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-09-11 18:28:56.496 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.UsersController.LoginUser (Avenga.NotesApp)'
+2025-09-11 18:28:56.520 +02:00 [INF] Route matched with {action = "LoginUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(Avenga.NotesApp.Dtos.UserDtos.LoginUserDto) on controller Avenga.NotesApp.Controllers.UsersController (Avenga.NotesApp).
+2025-09-11 18:29:14.763 +02:00 [INF] Executed DbCommand (70ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0 AND [u].[Password] = @__hashedPassword_1
+2025-09-11 18:29:14.849 +02:00 [INF] The user with username tpelivanov1 just logged in the app!
+2025-09-11 18:29:14.856 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-09-11 18:29:14.859 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.UsersController.LoginUser (Avenga.NotesApp) in 18336.4508ms
+2025-09-11 18:29:14.859 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.UsersController.LoginUser (Avenga.NotesApp)'
+2025-09-11 18:29:14.866 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5280/api/Users/login - 200 null text/plain; charset=utf-8 18506.3962ms
+2025-09-11 18:31:41.727 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-11 18:31:41.945 +02:00 [INF] Now listening on: http://localhost:5280
+2025-09-11 18:31:42.036 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-11 18:31:42.037 +02:00 [INF] Hosting environment: Development
+2025-09-11 18:31:42.037 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\StudentRepoApi\mkwd13-net-09-aspnetwebapi\G2\Class13\Avenga.NotesApp\Avenga.NotesApp
+2025-09-11 18:31:43.036 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/index.html - null null
+2025-09-11 18:31:43.238 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/index.html - 200 null text/html;charset=utf-8 209.2577ms
+2025-09-11 18:31:43.251 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-11 18:31:43.254 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.1381ms
+2025-09-11 18:31:43.341 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_vs/browserLink - null null
+2025-09-11 18:31:43.381 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.9871ms
+2025-09-11 18:31:43.507 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - null null
+2025-09-11 18:31:43.540 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.6337ms
+2025-09-11 18:32:18.641 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5280/api/Users/register - application/json 135
+2025-09-11 18:32:18.687 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-09-11 18:32:18.780 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.UsersController.Register (Avenga.NotesApp)'
+2025-09-11 18:32:18.801 +02:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(Avenga.NotesApp.Dtos.UserDtos.RegisterUserDto) on controller Avenga.NotesApp.Controllers.UsersController (Avenga.NotesApp).
+2025-09-11 18:32:22.600 +02:00 [INF] Registration model info: FirstName: 1234567, LastName: 1234567
+2025-09-11 18:32:33.510 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__ToLower_0='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-09-11 18:32:36.907 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([FirstName], [LastName], [Password], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2025-09-11 18:32:36.925 +02:00 [INF] Successfully registered 1234567
+2025-09-11 18:32:36.930 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-09-11 18:32:36.933 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.UsersController.Register (Avenga.NotesApp) in 18129.5849ms
+2025-09-11 18:32:36.933 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.UsersController.Register (Avenga.NotesApp)'
+2025-09-11 18:32:36.939 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5280/api/Users/register - 201 null text/plain; charset=utf-8 18303.9498ms
+2025-09-11 20:19:50.451 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-11 20:19:50.658 +02:00 [INF] Now listening on: http://localhost:5280
+2025-09-11 20:19:50.746 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-11 20:19:50.746 +02:00 [INF] Hosting environment: Development
+2025-09-11 20:19:50.746 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\StudentRepoApi\mkwd13-net-09-aspnetwebapi\G2\Class13\Avenga.NotesApp\Avenga.NotesApp
+2025-09-11 20:19:51.250 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/index.html - null null
+2025-09-11 20:19:51.485 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/index.html - 200 null text/html;charset=utf-8 246.5858ms
+2025-09-11 20:19:51.652 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-11 20:19:51.652 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_vs/browserLink - null null
+2025-09-11 20:19:51.654 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 2.4416ms
+2025-09-11 20:19:51.686 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.5168ms
+2025-09-11 20:19:51.801 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - null null
+2025-09-11 20:19:51.836 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.8941ms
+2025-09-11 20:20:59.846 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=sadsadas - null null
+2025-09-11 20:20:59.864 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-09-11 20:20:59.931 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:20:59.955 +02:00 [INF] Route matched with {action = "GetFruit", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruit(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:20:59.982 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:20:59.984 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:21:00.369 +02:00 [INF] Received HTTP response headers after 383.0701ms - 200
+2025-09-11 20:21:00.370 +02:00 [INF] End processing HTTP request after 391.7267ms - 200
+2025-09-11 20:21:00.398 +02:00 [INF] Successfully retrieved the fruit with its info!
+2025-09-11 20:21:00.402 +02:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2025-09-11 20:21:00.405 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp) in 447.2134ms
+2025-09-11 20:21:00.406 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:21:00.408 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=sadsadas - 204 null null 562.1421ms
+2025-09-11 20:21:11.423 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=banana - null null
+2025-09-11 20:21:11.426 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:21:11.427 +02:00 [INF] Route matched with {action = "GetFruit", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruit(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:21:11.433 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:21:11.433 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:21:11.518 +02:00 [INF] Received HTTP response headers after 84.2625ms - 200
+2025-09-11 20:21:11.518 +02:00 [INF] End processing HTTP request after 84.6927ms - 200
+2025-09-11 20:21:11.519 +02:00 [INF] Successfully retrieved the fruit with its info!
+2025-09-11 20:21:11.519 +02:00 [INF] Executing OkObjectResult, writing value of type 'Avenga.NotesApp.Dtos.FruitDtos.FruitDto'.
+2025-09-11 20:21:11.532 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp) in 105.158ms
+2025-09-11 20:21:11.532 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:21:11.533 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=banana - 200 null application/json; charset=utf-8 109.8997ms
+2025-09-11 20:21:36.123 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit - null null
+2025-09-11 20:21:36.127 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetAllFruits (Avenga.NotesApp)'
+2025-09-11 20:21:36.131 +02:00 [INF] Route matched with {action = "GetAllFruits", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFruits() on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:21:36.133 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:21:36.133 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:21:36.221 +02:00 [INF] Received HTTP response headers after 87.7274ms - 200
+2025-09-11 20:21:36.221 +02:00 [INF] End processing HTTP request after 88.0135ms - 200
+2025-09-11 20:21:36.222 +02:00 [INF] Successfully retrieved all fruits!
+2025-09-11 20:21:36.222 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Avenga.NotesApp.Dtos.FruitDtos.FruitDto, Avenga.NotesApp.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-11 20:21:36.223 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetAllFruits (Avenga.NotesApp) in 92.7062ms
+2025-09-11 20:21:36.224 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetAllFruits (Avenga.NotesApp)'
+2025-09-11 20:21:36.224 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit - 200 null application/json; charset=utf-8 100.3859ms
+2025-09-11 20:22:54.756 +02:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-11 20:22:54.966 +02:00 [INF] Now listening on: http://localhost:5280
+2025-09-11 20:22:55.061 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-11 20:22:55.061 +02:00 [INF] Hosting environment: Development
+2025-09-11 20:22:55.061 +02:00 [INF] Content root path: C:\Users\Administrator\Desktop\StudentRepoApi\mkwd13-net-09-aspnetwebapi\G2\Class13\Avenga.NotesApp\Avenga.NotesApp
+2025-09-11 20:22:55.570 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/index.html - null null
+2025-09-11 20:22:55.796 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/index.html - 200 null text/html;charset=utf-8 239.82ms
+2025-09-11 20:22:55.804 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-11 20:22:55.810 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.6672ms
+2025-09-11 20:22:55.889 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/_vs/browserLink - null null
+2025-09-11 20:22:55.927 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.3645ms
+2025-09-11 20:22:55.980 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - null null
+2025-09-11 20:22:55.995 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.3441ms
+2025-09-11 20:23:03.700 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=banana - null null
+2025-09-11 20:23:03.706 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-09-11 20:23:03.776 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:23:03.796 +02:00 [INF] Route matched with {action = "GetFruit", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruit(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:23:03.816 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:23:03.820 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:23:04.145 +02:00 [INF] Received HTTP response headers after 322.5007ms - 200
+2025-09-11 20:23:04.145 +02:00 [INF] End processing HTTP request after 333.5093ms - 200
+2025-09-11 20:23:04.169 +02:00 [INF] Successfully retrieved the fruit with its info!
+2025-09-11 20:23:04.173 +02:00 [INF] Executing OkObjectResult, writing value of type 'Avenga.NotesApp.Dtos.FruitDtos.FruitDto'.
+2025-09-11 20:23:04.191 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp) in 392.156ms
+2025-09-11 20:23:04.191 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:23:04.193 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=banana - 200 null application/json; charset=utf-8 492.5203ms
+2025-09-11 20:23:35.753 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/family/Musaceae - null null
+2025-09-11 20:23:35.757 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByFamily (Avenga.NotesApp)'
+2025-09-11 20:23:35.776 +02:00 [INF] Route matched with {action = "GetFruitsByFamily", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruitsByFamily(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:23:35.779 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/family/Musaceae
+2025-09-11 20:23:35.779 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/family/Musaceae
+2025-09-11 20:23:35.861 +02:00 [INF] Received HTTP response headers after 81.6173ms - 200
+2025-09-11 20:23:35.861 +02:00 [INF] End processing HTTP request after 82.0401ms - 200
+2025-09-11 20:23:35.862 +02:00 [INF] Successfully retrieved fruits by family!
+2025-09-11 20:23:35.862 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Avenga.NotesApp.Dtos.FruitDtos.FruitDto, Avenga.NotesApp.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-11 20:23:35.863 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruitsByFamily (Avenga.NotesApp) in 86.6071ms
+2025-09-11 20:23:35.863 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByFamily (Avenga.NotesApp)'
+2025-09-11 20:23:35.863 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/family/Musaceae - 200 null application/json; charset=utf-8 110.832ms
+2025-09-11 20:23:48.688 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=apple - null null
+2025-09-11 20:23:48.691 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:23:48.692 +02:00 [INF] Route matched with {action = "GetFruit", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruit(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:23:48.693 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:23:48.693 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:23:48.777 +02:00 [INF] Received HTTP response headers after 83.434ms - 200
+2025-09-11 20:23:48.777 +02:00 [INF] End processing HTTP request after 83.8294ms - 200
+2025-09-11 20:23:48.777 +02:00 [INF] Successfully retrieved the fruit with its info!
+2025-09-11 20:23:48.778 +02:00 [INF] Executing OkObjectResult, writing value of type 'Avenga.NotesApp.Dtos.FruitDtos.FruitDto'.
+2025-09-11 20:23:48.778 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp) in 86.1165ms
+2025-09-11 20:23:48.778 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruit (Avenga.NotesApp)'
+2025-09-11 20:23:48.778 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/fruitName?fruitName=apple - 200 null application/json; charset=utf-8 89.7847ms
+2025-09-11 20:24:01.837 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/family/Rosaceae - null null
+2025-09-11 20:24:01.837 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByFamily (Avenga.NotesApp)'
+2025-09-11 20:24:01.837 +02:00 [INF] Route matched with {action = "GetFruitsByFamily", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruitsByFamily(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:24:01.838 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/family/Rosaceae
+2025-09-11 20:24:01.838 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/family/Rosaceae
+2025-09-11 20:24:01.908 +02:00 [INF] Received HTTP response headers after 70.619ms - 200
+2025-09-11 20:24:01.909 +02:00 [INF] End processing HTTP request after 70.8098ms - 200
+2025-09-11 20:24:01.909 +02:00 [INF] Successfully retrieved fruits by family!
+2025-09-11 20:24:01.909 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Avenga.NotesApp.Dtos.FruitDtos.FruitDto, Avenga.NotesApp.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-11 20:24:01.910 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruitsByFamily (Avenga.NotesApp) in 72.1864ms
+2025-09-11 20:24:01.910 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByFamily (Avenga.NotesApp)'
+2025-09-11 20:24:01.910 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/family/Rosaceae - 200 null application/json; charset=utf-8 73.082ms
+2025-09-11 20:24:50.000 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/grnus/Fragaria - null null
+2025-09-11 20:24:50.000 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByGenus (Avenga.NotesApp)'
+2025-09-11 20:24:50.006 +02:00 [INF] Route matched with {action = "GetFruitsByGenus", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruitsByGenus(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:24:50.009 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/genus/Fragaria
+2025-09-11 20:24:50.009 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/genus/Fragaria
+2025-09-11 20:24:50.092 +02:00 [INF] Received HTTP response headers after 83.3365ms - 200
+2025-09-11 20:24:50.093 +02:00 [INF] End processing HTTP request after 83.6447ms - 200
+2025-09-11 20:24:50.094 +02:00 [INF] Successfully retrieved all fruits by genus!
+2025-09-11 20:24:50.099 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Avenga.NotesApp.Dtos.FruitDtos.FruitDto, Avenga.NotesApp.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-11 20:24:50.099 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruitsByGenus (Avenga.NotesApp) in 92.5293ms
+2025-09-11 20:24:50.099 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByGenus (Avenga.NotesApp)'
+2025-09-11 20:24:50.101 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/grnus/Fragaria - 200 null application/json; charset=utf-8 101.2613ms
+2025-09-11 20:25:19.635 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit/order/Rosales - null null
+2025-09-11 20:25:19.636 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByOrder (Avenga.NotesApp)'
+2025-09-11 20:25:19.649 +02:00 [INF] Route matched with {action = "GetFruitsByOrder", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFruitsByOrder(System.String) on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:25:19.651 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/order/Rosales
+2025-09-11 20:25:19.651 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/order/Rosales
+2025-09-11 20:25:19.917 +02:00 [INF] Received HTTP response headers after 265.6176ms - 200
+2025-09-11 20:25:19.917 +02:00 [INF] End processing HTTP request after 265.8845ms - 200
+2025-09-11 20:25:19.917 +02:00 [INF] Successfully retrieved all fruits by order!
+2025-09-11 20:25:19.917 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Avenga.NotesApp.Dtos.FruitDtos.FruitDto, Avenga.NotesApp.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-11 20:25:19.918 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetFruitsByOrder (Avenga.NotesApp) in 268.3961ms
+2025-09-11 20:25:19.918 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetFruitsByOrder (Avenga.NotesApp)'
+2025-09-11 20:25:19.918 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit/order/Rosales - 200 null application/json; charset=utf-8 283.4655ms
+2025-09-11 20:26:31.582 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5280/api/Fruit - null null
+2025-09-11 20:26:31.583 +02:00 [INF] Executing endpoint 'Avenga.NotesApp.Controllers.FruitController.GetAllFruits (Avenga.NotesApp)'
+2025-09-11 20:26:31.587 +02:00 [INF] Route matched with {action = "GetAllFruits", controller = "Fruit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFruits() on controller Avenga.NotesApp.Controllers.FruitController (Avenga.NotesApp).
+2025-09-11 20:27:10.026 +02:00 [INF] Start processing HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:27:10.029 +02:00 [INF] Sending HTTP request GET https://www.fruityvice.com/api/fruit/all
+2025-09-11 20:27:10.358 +02:00 [INF] Received HTTP response headers after 328.9661ms - 200
+2025-09-11 20:27:10.358 +02:00 [INF] End processing HTTP request after 331.6882ms - 200
+2025-09-11 20:30:07.885 +02:00 [INF] Successfully retrieved all fruits!
+2025-09-11 20:30:10.195 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Avenga.NotesApp.Dtos.FruitDtos.FruitDto, Avenga.NotesApp.Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-11 20:30:13.691 +02:00 [INF] Executed action Avenga.NotesApp.Controllers.FruitController.GetAllFruits (Avenga.NotesApp) in 222103.1102ms
+2025-09-11 20:30:13.691 +02:00 [INF] Executed endpoint 'Avenga.NotesApp.Controllers.FruitController.GetAllFruits (Avenga.NotesApp)'
+2025-09-11 20:30:13.691 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5280/api/Fruit - 200 null application/json; charset=utf-8 222108.6287ms
