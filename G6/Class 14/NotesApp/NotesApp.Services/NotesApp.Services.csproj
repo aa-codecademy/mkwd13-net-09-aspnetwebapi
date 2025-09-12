@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NotesApp.DataAccess\NotesApp.DataAccess.csproj" />
+    <ProjectReference Include="..\NotesApp.Domain\NotesApp.Domain.csproj" />
+    <ProjectReference Include="..\NotesApp.DTOs\NotesApp.DTOs.csproj" />
+    <ProjectReference Include="..\NotesApp.Helpers\NotesApp.Helpers.csproj" />
+    <ProjectReference Include="..\NotesApp.Mappers\NotesApp.Mappers.csproj" />
+  </ItemGroup>
+
+</Project>
