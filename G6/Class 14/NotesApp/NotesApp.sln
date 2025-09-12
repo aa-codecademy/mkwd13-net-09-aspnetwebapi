@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.Domain", "NotesApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.Helpers", "NotesApp.Helpers\NotesApp.Helpers.csproj", "{9E44E8DF-5DD4-40FA-86DE-05790498F70A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Services", "NotesApp.Services\NotesApp.Services.csproj", "{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.Services", "NotesApp.Services\NotesApp.Services.csproj", "{E0437619-4C5D-4EE1-B81E-60A9F7B66FAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.DTOs", "NotesApp.DTOs\NotesApp.DTOs.csproj", "{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.DTOs", "NotesApp.DTOs\NotesApp.DTOs.csproj", "{90B31AC3-F7E1-48F3-8556-C38A45B54CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Mappers", "NotesApp.Mappers\NotesApp.Mappers.csproj", "{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.Mappers", "NotesApp.Mappers\NotesApp.Mappers.csproj", "{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Tests", "NotesApp.Tests\NotesApp.Tests.csproj", "{5B60201D-9E4D-452C-9404-0E4F2B188EDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E6016C7-D44C-47A4-85E5-BB2E5FD1FAD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B60201D-9E4D-452C-9404-0E4F2B188EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B60201D-9E4D-452C-9404-0E4F2B188EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B60201D-9E4D-452C-9404-0E4F2B188EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B60201D-9E4D-452C-9404-0E4F2B188EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
