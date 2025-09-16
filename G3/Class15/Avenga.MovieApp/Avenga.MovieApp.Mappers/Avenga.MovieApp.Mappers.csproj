@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avenga.MovieApp.Domain\Avenga.MovieApp.Domain.csproj" />
+    <ProjectReference Include="..\Avenga.MovieApp.Dtos\Avenga.MovieApp.Dtos.csproj" />
+  </ItemGroup>
+
+</Project>
