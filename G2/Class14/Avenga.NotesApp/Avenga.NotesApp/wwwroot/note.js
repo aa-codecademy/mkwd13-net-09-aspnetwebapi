@@ -33,11 +33,17 @@ let addNote = async () => {
     //getting the token from localStorage
     let token = localStorage.getItem("notesApiToken");
 
+    let numberUserId = parseInt(addNoteUserInput.value);
+    let priorityInt = parseInt(addNotePriorityInput.value);
+    let TagInt = parseInt(addNoteTaginput.value);
+
+    console.log(numberUserId);
+
     let note = {
         Text: addNoteTextInput.value,
-        Priority: addNotePriorityInput.value,
-        Tag: addNoteTaginput.value,
-        UserId: addNoteUserInput.value
+        Priority: priorityInt,
+        Tag: TagInt,
+        UserId: numberUserId
     }
 
     let response = await fetch(url + "/addNote", {

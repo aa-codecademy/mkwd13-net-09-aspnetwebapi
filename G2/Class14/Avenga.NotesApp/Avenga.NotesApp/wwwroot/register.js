@@ -23,6 +23,8 @@ let register = async () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
+        console.log(user);
+        debugger;
     }).then(function (response) {
         console.log(response);
         window.location.href = "http://localhost:" + port + "/login.html"
