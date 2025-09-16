@@ -30,7 +30,7 @@ namespace NotesApp.Tests
 		[TestMethod]
 		public void SumPositiveNumber_should_return_positiveNumber_on_positive_inputs()
 		{
-			//Assert
+			//Arange
 			int num1 = 2;
 			int num2 = 3;
 			int expectedResult = 5;

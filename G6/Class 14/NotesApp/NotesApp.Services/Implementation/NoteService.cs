@@ -142,6 +142,11 @@ namespace NotesApp.Services.Implementation
         {
             var note = _noteRepository.GetById(id);
 
+            if(note == null)
+            {
+                throw new NullReferenceException("Note was not found");
+            }
+
             if (note.UserId != userId)
             {
                 throw new Exception("The logged in user is not owner of the requrest note");
