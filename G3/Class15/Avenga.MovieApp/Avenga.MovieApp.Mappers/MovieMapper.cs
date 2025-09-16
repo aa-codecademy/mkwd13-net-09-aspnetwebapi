@@ -25,6 +25,7 @@ namespace Avenga.MovieApp.Mappers
         {
             return new MovieDto
             {
+                Id = movie.Id,
                 Year = movie.Year,
                 Title = movie.Title,
                 Genre = movie.Genre,

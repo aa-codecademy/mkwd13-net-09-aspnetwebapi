@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.10.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.10.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Avenga.MovieApp.DataAccess\Avenga.MovieApp.DataAccess.csproj" />
-    <ProjectReference Include="..\Avenga.MovieApp.Dtos\Avenga.MovieApp.Dtos.csproj" />
-    <ProjectReference Include="..\Avenga.MovieApp.Mappers\Avenga.MovieApp.Mappers.csproj" />
-    <ProjectReference Include="..\Avenga.MovieApp.Shared\Avenga.MovieApp.Shared.csproj" />
+    <ProjectReference Include="..\Avenga.MovieApp.Services\Avenga.MovieApp.Services.csproj" />
   </ItemGroup>
 
 </Project>

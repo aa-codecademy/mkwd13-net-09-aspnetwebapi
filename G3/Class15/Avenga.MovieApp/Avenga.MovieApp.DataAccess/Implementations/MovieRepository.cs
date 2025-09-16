@@ -29,11 +29,6 @@ namespace Avenga.MovieApp.DataAccess.Implementations
 
         public List<Movie> FilterMovies(int? year, GenreEnum? genre)
         {
-            if(year == null || genre == null)
-            {
-                return _moviesDbContext.Movies.ToList();
-            }
-
             if(year == null)
             {
                 List<Movie> movieDb = _moviesDbContext.Movies.Where(x=>x.Genre == (GenreEnum)genre).ToList();

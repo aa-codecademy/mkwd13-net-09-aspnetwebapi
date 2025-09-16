@@ -4,6 +4,7 @@ using Avenga.MovieApp.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace Avenga.MovieApp.Controllers
 {
@@ -27,16 +28,15 @@ namespace Avenga.MovieApp.Controllers
                 UserDto user = _userService.LoginUser(loginUserDto);
                 if(user == null)
                 {
+                    Log.Error($"Not Found: Someone tried to user the username {loginUserDto.Username} or password to enter our app!");
                     return NotFound("Username or Password is incorrect!");
                 }
+                Log.Information($"OK: The user with username: {loginUserDto.Username} just logged in the application!");
                 return Ok(user);
-            }
-            catch(UserException e)
-            {
-                return BadRequest(e.Message);
             }
             catch (Exception ex) 
             {
+                Log.Error($"Internal Error: {ex.Message}");
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
@@ -49,14 +49,17 @@ namespace Avenga.MovieApp.Controllers
             {
                 _userService.RegisterUser(registerUserDto);
 
+                Log.Information($"Successfully registered user with username {registerUserDto.Username}");
                 return Ok(new ResponseDto() { Success = "Successfully registered user!"});
             }
-            catch (UserException e)
+            catch (UserException ex)
             {
-                return BadRequest(new ResponseDto() { Error = e.Message });
+                Log.Error($"Bad Request user exception: {ex.Message}");
+                return BadRequest(new ResponseDto() { Error = ex.Message });
             }
             catch (Exception ex)
             {
+                Log.Error($"Internal server error: {ex.Message}");
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }

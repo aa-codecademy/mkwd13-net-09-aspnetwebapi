@@ -6,6 +6,7 @@ using Avenga.MovieApp.Services.Interfaces;
 using Avenga.MovieApp.Shared;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -54,6 +55,7 @@ namespace Avenga.MovieApp.Services.Implementations
             };
 
             SecurityToken token = securityTokenHandler.CreateToken(securityTokenDescriptor);
+            Log.Information($"Succ created token with username {loginUser.Username}");
 
             //4. MAPPING FROM MODEL TO DTO
 
